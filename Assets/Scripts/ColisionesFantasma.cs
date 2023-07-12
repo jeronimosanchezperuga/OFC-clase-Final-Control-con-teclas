@@ -18,6 +18,13 @@ public class ColisionesFantasma : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);      
+        if (collision.gameObject.CompareTag("Mortal"))
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(collision.gameObject);
+        }             
     }
 }
